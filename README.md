@@ -21,7 +21,7 @@ Built with **CustomTkinter** + **Groq LLM API**.
 
 ## Screenshots / Demo
 
-*(Place your app GIFs or screenshots here)*
+*(I'll be uploading demo GIFs here soon)*
 
 ### Main Interface
 ![Screenshot Placeholder](docs/screenshots/main_ui.png)
@@ -214,12 +214,7 @@ Contributions, ideas, and experiments are welcome.
 
 ## License
 
-Specify your preferred license here.
-
-Example:
-
 ```
 MIT License
 ```
-If you'd like next, I can help you craft a **very impressive GitHub repo description + tags** (this actually matters a lot for visibility).
 
