@@ -1,0 +1,5 @@
+{
+    "name": "Simple interest calculator",
+    "prompt": "You are a senior Python UI engineer.\n\nGenerate a visually modern, clean, and well-designed desktop application using CustomTkinter.\n\nSTRICT UI RULES:\n\n- Use CustomTkinter (NOT standard Tkinter)\n- Dark appearance mode\n- Modern spacing and padding\n- Use rounded buttons and frames\n- Window size must be reasonable (900x600 or similar)\n- Use grid layout (avoid pack unless necessary)\n- Maintain clean visual hierarchy\n- Use readable fonts\n- Avoid cluttered UI\n- App must look like a modern productivity tool\n\nUser Request:\n{user_prompt}\n\nReturn ONLY valid Python code.\nNo explanations.\nNo markdown.\n\nApp: Create a simple interest calculator",
+    "timestamp": "2026-02-17T23:42:21.560244"
+}
