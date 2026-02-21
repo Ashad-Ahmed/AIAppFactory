@@ -1,220 +1,429 @@
 # AI App Factory
 
-**AI App Factory** is a desktop application that lets you generate, run, edit, and manage Python applications using an LLM.  
-Describe the app you want → Generate code → Run instantly → Save & reuse.
-
-Built with **CustomTkinter** + **Groq LLM API**.
+An intelligent desktop application that generates, runs, and manages Python applications using AI. Simply describe what you want, and AI will generate the code for you.
 
 ---
 
-## Features
+## 📋 Table of Contents
 
-- Generate Python apps from natural language descriptions  
-- Run generated code instantly  
-- Save & reload previously generated apps  
-- Export code as standalone `.py` files  
-- Light / Dark appearance modes  
-- Secure API key configuration  
-- Clean IDE-style interface  
-
----
-
-## Screenshots / Demo
-
-*(I'll be uploading demo GIFs here soon)*
-
-### Main Interface
-![Screenshot Placeholder](docs/screenshots/main_ui.png)
-
-### Code Generation
-![Screenshot Placeholder](docs/screenshots/code_generation.png)
-
-### Running Apps
-![Screenshot Placeholder](docs/screenshots/running_app.png)
+- [Overview](#overview)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Project Structure](#project-structure)
+- [Demo](#demo)
+- [Future Scope](#future-scope)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## Architecture Overview
+## 🎯 Overview
 
-AI App Factory follows a simple workflow:
+**AI App Factory** is a powerful tool that bridges the gap between idea and implementation. Powered by the Groq LLM (Llama 3.3-70B), it allows developers and non-developers alike to:
 
-User Prompt → Groq LLM → Generated Python Code → Editor → Execution
+- Describe an application in natural language
+- Generate production-ready Python code instantly
+- Execute code directly within the application
+- Save and manage multiple AI-generated applications
+- Fine-tune generated code before execution
 
-**Components:**
-
-- **UI Layer** → CustomTkinter  
-- **LLM Layer** → Groq API (`llama-3.3-70b-versatile`)  
-- **Execution Layer** → Temporary Python subprocess  
-- **Persistence Layer** → Local file system  
-
----
-
-## Project Structure
-
-```
-AI-App-Factory/
-│── config.json          # Stores API key & appearance
-│── saved_apps/          # Saved applications
-│── main.py              # Main application
-│── docs/
-│   └── screenshots/     # Screenshots / GIFs
-```
+This tool is perfect for rapid prototyping, learning, automation, and creative experimentation.
 
 ---
 
-## Installation
+## ✨ Features
 
-### 1️) Clone Repository
+### Core Features
+
+- **AI Code Generation**: Uses Groq's Llama 3.3-70B model to generate Python code from natural language descriptions
+- **Live Code Editor**: Edit and refine generated code with syntax highlighting
+- **Code Execution**: Run generated Python applications directly within the app
+- **Save & Load**: Store generated applications with metadata for future use
+- **Export Functionality**: Export generated code as standalone `.py` files
+- **Output Console**: Real-time execution output and error messages
+
+### User Interface
+
+- **Modern Dark/Light Theme**: Customizable appearance modes
+- **Intuitive Layout**: Three-panel design with description input, code editor, and console output
+- **Quick Access Sidebar**: Easy navigation with quick action buttons
+- **App Management**: Dropdown menu to load previously saved applications
+
+### Configuration
+
+- **API Key Management**: Secure storage of Groq API credentials
+- **Settings Dialog**: Configure appearance and API settings
+- **Persistent Configuration**: Settings saved in `config.json`
+
+### Data Management
+
+- **Automatic App Storage**: Save generated apps with metadata in `saved_apps/` directory
+- **Metadata Preservation**: Original prompts stored alongside generated code
+- **Refresh Capability**: Dynamically load available saved applications
+
+---
+
+## 📦 Requirements
+
+### System Requirements
+- **OS**: Windows, macOS, or Linux
+- **Python**: Version 3.8 or higher
+- **RAM**: Minimum 4GB (8GB recommended)
+- **Internet Connection**: Required for Groq API calls
+
+### Software Dependencies
+
+| Package | Version | Purpose |
+|---------|---------|---------|
+| customtkinter | Latest | Modern GUI framework |
+| groq | >=0.4.0 | Groq API client |
+| Python stdlib | Built-in | File handling, JSON, subprocess, tempfile |
+
+---
+
+## 🚀 Installation
+
+### Step 1: Clone or Download the Project
 
 ```bash
-git clone https://github.com/yourusername/ai-app-factory.git
-cd ai-app-factory
+git clone https://github.com/yourusername/AIAppFactory.git
+cd AIAppFactory
 ```
 
-## 2️) Create Virtual Environment (Recommended)
+### Step 2: Create a Virtual Environment (Recommended)
 
 ```bash
 python -m venv venv
-```
-
-### Activate environment
-
-**Windows**
-
-```bash
+# Windows
 venv\Scripts\activate
-```
-
-**Mac / Linux**
-
-```bash
+# macOS/Linux
 source venv/bin/activate
 ```
 
----
+### Step 3: Install Dependencies
 
-## 3️) Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+Or manually install:
 
 ```bash
 pip install customtkinter groq
 ```
 
----
+### Step 4: Obtain Groq API Key
 
-## API Key Setup
+1. Visit [Groq Console](https://console.groq.com)
+2. Sign up for a free account
+3. Generate an API key
+4. Keep this key handy for configuration
 
-AI App Factory requires a **Groq API key**.
+### Step 5: Run the Application
 
-1. Obtain API key from Groq Console  
-2. Launch the app  
-3. Open **⚙ Settings**  
-4. Paste your API key  
-5. Save  
-
-Your key is stored locally inside:
-
-```
-config.json
+```bash
+python ai_app_factory.py
 ```
 
 ---
 
-## Usage Guide
+## 📖 Usage
 
-### Generate an App
+### 1. Initial Setup
 
-1. Enter a description in **App Description**  
-2. Click **Generate App**  
-3. Code appears in **Generated Code**
+On first launch, the application will create:
+- `config.json` - Configuration file
+- `saved_apps/` - Directory for saved applications
 
-Example prompt:
+### 2. Configure API Key
 
-```
-Create a calculator with a modern GUI supporting addition, subtraction, multiplication, division.
-```
+1. Click the **⚙ Settings** button in the bottom-left corner
+2. Enter your Groq API key in the "Groq API Key" field
+3. (Optional) Switch between "dark" and "light" appearance
+4. Click **Save Settings**
 
----
+### 3. Generate Code
 
-### Run the Code
+1. **Describe Your App**: Type a detailed description of what you want in the "App Description" box
+   - Example: "Create a calculator app with addition, subtraction, multiplication, and division operations"
+   - Be specific for better results
+2. Click **Generate App** button
+3. Wait for the AI to generate code (status shows "Generating...")
+4. Generated code appears in the "Generated Code" section
 
-Click **Run Code** to execute the generated script.
+### 4. Run Generated Code
 
-- Code runs in a separate Python process  
-- Useful for quick experimentation  
+1. Review the generated code in the code editor
+2. (Optional) Make edits if needed
+3. Click **Run Code** button
+4. The application will execute in a new window
+5. Console output appears in the "Output Console"
 
----
+### 5. Save Your Application
 
-### Save an App
+1. Click **Save App** button
+2. Enter a unique name for your application
+3. The app metadata (prompt + code) is saved to `saved_apps/{app_name}/`
+4. Application appears in the "Saved Apps" dropdown
 
-Click **Save App** → Provide a name.
+### 6. Load Saved Applications
 
-Each saved app stores:
-
-- `app.py` → Generated code  
-- `meta.json` → Original prompt  
-
----
-
-### Load a Saved App
-
-1. Select from **Saved Apps** dropdown  
+1. Select an app from the "Saved Apps" dropdown
 2. Click **Load App**
+3. Original prompt and code are restored for editing
+
+### 7. Export Code
+
+1. Click **Export .py** button
+2. Choose a location and filename
+3. Code is saved as a standalone Python file
 
 ---
 
-### Export Code
+## ⚙️ Configuration
 
-Click **Export .py** to save the script anywhere.
+### Configuration File: `config.json`
 
----
-
-## Technologies Used
-
-- CustomTkinter  
-- Groq LLM API  
-- Python Subprocess Execution  
-- Local File Persistence  
-
----
-
-## Important Notes
-
-- Generated code quality depends on prompt clarity  
-- Always review generated code before executing  
-- Requires Python installed on system  
-
----
-
-## Future Scope
-
-AI App Factory can evolve into a much more powerful development tool:
-
-- Built-in Python interpreter sandbox  
-- Error capture & debugging assistant  
-- Multi-file project generation  
-- Dependency auto-installer  
-- Plugin / Extension system  
-- Code versioning & diff viewer  
-- Integrated package builder (EXE)  
-- Support for multiple LLM providers  
-- Prompt templates & presets  
-- Security validation for generated code  
-
----
-
-## Contributing
-
-Contributions, ideas, and experiments are welcome.
-
-1. Fork repository  
-2. Create feature branch  
-3. Submit Pull Request  
-
----
-
-## License
-
-```
-MIT License
+```json
+{
+    "api_key": "your_groq_api_key_here",
+    "appearance": "dark"
+}
 ```
 
+**Note**: API key is stored locally. Keep it secure and never commit to version control.
+
+### Environment Variables (Optional)
+
+You can set the API key via environment variable instead of the GUI:
+
+```bash
+export GROQ_API_KEY="your_api_key"
+```
+
+Then modify the code to read from environment:
+
+```python
+api_key = config.get("api_key", os.getenv("GROQ_API_KEY", ""))
+```
+
+---
+
+## 📁 Project Structure
+
+```
+AIAppFactory/
+├── ai_app_factory.py          # Main application file
+├── config.json                # Configuration (auto-generated)
+├── requirements.txt           # Python dependencies
+├── README.md                  # This file
+└── saved_apps/                # Directory for saved applications
+    ├── app_name_1/
+    │   ├── app.py
+    │   └── meta.json
+    └── app_name_2/
+        ├── app.py
+        └── meta.json
+```
+
+---
+
+## 🎬 Demo
+
+### Screenshot 1: Main Interface
+[Insert screenshot of main application window here]
+
+### Screenshot 2: Code Generation
+[Insert screenshot showing generated code in editor]
+
+### Screenshot 3: Settings Dialog
+[Insert screenshot of settings configuration window]
+
+### Screenshot 4: Saved Apps Management
+[Insert screenshot showing saved apps dropdown and load functionality]
+
+### Video Demo
+[Insert link to demo video here]
+
+---
+
+## 🔮 Future Scope
+
+### Phase 2 - Enhanced Code Generation
+- [ ] **Multi-Language Support**: Generate code in JavaScript, Java, C++, etc.
+- [ ] **Framework Integration**: Built-in support for Flask, Django, FastAPI
+- [ ] **Code Templates**: Pre-built templates for common app types
+- [ ] **AI Model Selection**: Choose between different Groq models based on complexity
+- [ ] **Context-Aware Generation**: Remember conversation history for better code suggestions
+
+### Phase 3 - Advanced Features
+- [ ] **Web UI**: Browser-based interface using Flask/FastAPI
+- [ ] **Real-time Collaboration**: Share projects and collaborate with team members
+- [ ] **Version Control**: Built-in Git integration for code versioning
+- [ ] **Code Analysis**: Static analysis, code quality metrics, and suggestions
+- [ ] **Debugging Tools**: Integrated debugger and profiler
+- [ ] **Testing Suite**: Automatic test generation and execution
+
+### Phase 4 - Intelligence Enhancements
+- [ ] **Code Optimization**: AI-powered code optimization suggestions
+- [ ] **Performance Analysis**: Identify bottlenecks and optimization opportunities
+- [ ] **Security Scanning**: Detect security vulnerabilities in generated code
+- [ ] **Documentation Generation**: Automatic docstring and README generation
+- [ ] **Code Refactoring**: Suggest and apply code refactoring patterns
+
+### Phase 5 - Ecosystem
+- [ ] **Plugin System**: Allow community-contributed plugins and extensions
+- [ ] **Cloud Storage**: Save apps to cloud with Google Drive/OneDrive integration
+- [ ] **API Endpoints**: Expose functionality via REST API
+- [ ] **Mobile App**: Native mobile application for iOS/Android
+- [ ] **Marketplace**: Share and discover generated apps in community marketplace
+
+### Phase 6 - Enterprise Features
+- [ ] **User Authentication**: Multi-user support with authentication
+- [ ] **Role-Based Access**: Different permission levels for team members
+- [ ] **Audit Logging**: Track all code generation and execution activities
+- [ ] **API Rate Limiting**: Manage API usage and costs
+- [ ] **Custom Models**: Support for fine-tuned custom LLMs
+
+---
+
+## 🐛 Troubleshooting
+
+### Issue: "API key not configured"
+
+**Solution**: 
+1. Open Settings (⚙ button)
+2. Enter a valid Groq API key
+3. Click Save Settings
+
+### Issue: Generated code doesn't run
+
+**Possible Causes**:
+- The AI generated code with dependencies not installed
+- The code has syntax errors
+- The generated code tries to use features not available in the current Python version
+
+**Solution**:
+1. Review the generated code carefully
+2. Edit and fix any issues
+3. Install missing dependencies if needed
+4. Ensure you're using Python 3.8+
+
+### Issue: Application won't start
+
+**Solution**:
+1. Ensure all dependencies are installed: `pip install -r requirements.txt`
+2. Check Python version: `python --version` (should be 3.8+)
+3. Delete `config.json` and restart (it will recreate with defaults)
+
+### Issue: API calls are slow
+
+**Solution**:
+- Check your internet connection
+- Groq API might be experiencing high load - try again later
+- Simplify your prompt for faster generation
+
+### Issue: Application crashes on code execution
+
+**Solution**:
+1. The generated code might have infinite loops or resource issues
+2. Review the code before running
+3. Close the application window if it becomes unresponsive
+
+---
+
+## 📝 Code Examples
+
+### Example 1: Simple Calculator
+
+**Prompt**:
+```
+Create a simple calculator GUI with buttons for addition, subtraction, multiplication, and division. Include a display for showing results.
+```
+
+**Generated Code Preview**:
+The AI will generate a complete calculator application with all requested features.
+
+### Example 2: File Manager
+
+**Prompt**:
+```
+Create a file manager GUI that allows users to browse directories, view files, delete files, and rename files.
+```
+
+### Example 3: Task Manager
+
+**Prompt**:
+```
+Build a task management application with the ability to add tasks, mark them as complete, delete tasks, and save the task list to a JSON file.
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
+
+### Code Style Guidelines
+- Follow PEP 8 guidelines
+- Add comments for complex logic
+- Update README for new features
+- Test thoroughly before submitting
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## 📞 Support & Contact
+
+- **Issues**: Report bugs via GitHub Issues
+- **Discussions**: Join community discussions on GitHub Discussions
+- **Email**: [your-email@example.com]
+- **Discord**: [Join our Discord server]
+
+---
+
+## 🙏 Acknowledgments
+
+- **Groq** for providing the powerful Llama 3.3-70B model and API
+- **CustomTkinter** for the modern GUI framework
+- **Python Community** for amazing tools and libraries
+
+---
+
+## 📈 Roadmap
+
+**v1.1** (Next Release)
+- [ ] Improved error handling
+- [ ] Code syntax highlighting
+- [ ] Keyboard shortcuts
+
+**v1.5** (Mid-term)
+- [ ] Web UI
+- [ ] Multi-language support
+- [ ] Code templates library
+
+**v2.0** (Long-term)
+- [ ] Cloud integration
+- [ ] Collaboration features
+- [ ] Advanced debugging tools
+
+---
+
+**Last Updated**: February 2026  
+**Current Version**: 1.0.0
