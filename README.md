@@ -2,9 +2,11 @@
 
 An intelligent desktop application that generates, runs, and manages Python applications using AI. Simply describe what you want, and AI will generate the code for you.
 
+![Home Screen](https://github.com/Ashad-Ahmed/AIAppFactory/blob/main/DemoScreenShots_AIAppFactory/HomeScreen.png?raw=true)
+
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -21,7 +23,7 @@ An intelligent desktop application that generates, runs, and manages Python appl
 
 ---
 
-## 🎯 Overview
+## Overview
 
 **AI App Factory** is a powerful tool that bridges the gap between idea and implementation. Powered by the Groq LLM (Llama 3.3-70B), it allows developers and non-developers alike to:
 
@@ -35,7 +37,7 @@ This tool is perfect for rapid prototyping, learning, automation, and creative e
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Features
 
@@ -67,7 +69,7 @@ This tool is perfect for rapid prototyping, learning, automation, and creative e
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 ### System Requirements
 - **OS**: Windows, macOS, or Linux
@@ -85,7 +87,7 @@ This tool is perfect for rapid prototyping, learning, automation, and creative e
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Step 1: Clone or Download the Project
 
@@ -131,7 +133,7 @@ python ai_app_factory.py
 
 ---
 
-## 📖 Usage
+## Usage
 
 ### 1. Initial Setup
 
@@ -184,7 +186,7 @@ On first launch, the application will create:
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### Configuration File: `config.json`
 
@@ -213,7 +215,7 @@ api_key = config.get("api_key", os.getenv("GROQ_API_KEY", ""))
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 AIAppFactory/
@@ -232,26 +234,23 @@ AIAppFactory/
 
 ---
 
-## 🎬 Demo
+## Demo
 
 ### Screenshot 1: Main Interface
-[Insert screenshot of main application window here]
+![Insert screenshot of main application window here](https://github.com/Ashad-Ahmed/AIAppFactory/blob/main/DemoScreenShots_AIAppFactory/UserEntersPrompt.png?raw=true)
 
 ### Screenshot 2: Code Generation
-[Insert screenshot showing generated code in editor]
+![Insert screenshot showing generated code in editor](https://github.com/Ashad-Ahmed/AIAppFactory/blob/main/DemoScreenShots_AIAppFactory/GeneratedCodeAndApp.png?raw=true)
 
 ### Screenshot 3: Settings Dialog
-[Insert screenshot of settings configuration window]
+![Insert screenshot of settings configuration window](https://github.com/Ashad-Ahmed/AIAppFactory/blob/main/DemoScreenShots_AIAppFactory/Settings%20Dialog%20Box.png?raw=true)
 
 ### Screenshot 4: Saved Apps Management
-[Insert screenshot showing saved apps dropdown and load functionality]
-
-### Video Demo
-[Insert link to demo video here]
+![Insert screenshot showing saved apps dropdown and load functionality](https://github.com/Ashad-Ahmed/AIAppFactory/blob/main/DemoScreenShots_AIAppFactory/LoadAppsFromSavedApps.png?raw=true)
 
 ---
 
-## 🔮 Future Scope
+## Future Scope
 
 ### Phase 2 - Enhanced Code Generation
 - [ ] **Multi-Language Support**: Generate code in JavaScript, Java, C++, etc.
@@ -291,7 +290,7 @@ AIAppFactory/
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Issue: "API key not configured"
 
@@ -336,7 +335,7 @@ AIAppFactory/
 
 ---
 
-## 📝 Code Examples
+## Code Examples
 
 ### Example 1: Simple Calculator
 
@@ -364,7 +363,7 @@ Build a task management application with the ability to add tasks, mark them as 
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -383,13 +382,13 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-## 📞 Support & Contact
+## Support & Contact
 
 - **Issues**: Report bugs via GitHub Issues
 - **Discussions**: Join community discussions on GitHub Discussions
@@ -398,7 +397,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Groq** for providing the powerful Llama 3.3-70B model and API
 - **CustomTkinter** for the modern GUI framework
@@ -406,7 +405,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 📈 Roadmap
+## Roadmap
 
 **v1.1** (Next Release)
 - [ ] Improved error handling
